@@ -7,7 +7,7 @@ A mobile-friendly one-page website for **Home Build Construction** (HBC Projects
 - **Lead capture:** A "Request a Service" form that composes a structured enquiry and hands it off to **WhatsApp** — no backend required
 - **Deployable on GitHub Pages** as a fully static site (included CI workflow)
 
-> Demo note: business details (phone, email, copy) were taken from the company's public website. Project imagery is AI-generated and illustrative — swap in real job photos before going live.
+> Demo note: business details (phone, email, copy) were taken from the company's public website. Project photos are real jobs supplied via BusinessHustle.
 
 ---
 
@@ -98,12 +98,12 @@ The repo ships with a ready-made workflow (`.github/workflows/deploy-pages.yml`)
 | Service copy & features | `services` array in `src/lib/site.ts` |
 | Page sections & order | `src/app/page.tsx` |
 | Colours & fonts | `src/app/globals.css`, Tailwind classes (`stone` / `amber` palette) |
-| Images | Replace the PNGs in `src/assets/` with real job photos (bundled & content-hashed automatically — keep filenames, or update the imports in `src/lib/site.ts`) |
+| Images | Real job photos live in `src/assets/` (bundled & content-hashed automatically). To swap or add: drop the file in, then update the imports/`galleryItems` in `src/lib/site.ts` |
 | SEO metadata | `src/app/layout.tsx` |
 
 ## Suggested next steps for the real site
 
-- Swap in real project photos (biggest credibility win for a trade profile)
+- Swap in more real project photos as jobs complete (biggest credibility win for a trade profile)
 - Link a Google Business Profile and add a reviews section
 - Add the real contact form backend (e.g. Formspree/Netlify Forms) if email leads are also wanted
 - Register a custom domain and point it at GitHub Pages (Settings → Pages → Custom domain)

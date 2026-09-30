@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Award, Clock, HandCoins, MapPin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { site, servicesArea, images } from "@/lib/site";
+import { site, servicesArea, images, galleryItems } from "@/lib/site";
 
 const reasons = [
   {
@@ -80,8 +80,8 @@ export function About() {
           <div className="flex flex-col gap-5">
             <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-stone-200 shadow-sm">
               <Image
-                src={images.timberInterior}
-                alt="Timber-frame home interior with exposed wooden beams built by Home Build Construction"
+                src={images.livingArea}
+                alt="Open-plan living and dining area with exposed timber beams, built by Home Build Construction"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
@@ -114,33 +114,6 @@ export function About() {
 }
 
 export function RecentWork() {
-  const items = [
-    {
-      src: images.kitchen,
-      alt: "Renovated kitchen with light oak cabinets and granite countertops",
-      title: "Kitchen refit & layout redesign",
-      tag: "Kitchens",
-    },
-    {
-      src: images.bathroom,
-      alt: "Renovated bathroom with freestanding tub and tiled walk-in shower",
-      title: "Full bathroom rebuild",
-      tag: "Bathrooms",
-    },
-    {
-      src: images.timber,
-      alt: "Timber-frame structure with exposed trusses during construction",
-      title: "Timber-frame erect & beam work",
-      tag: "Timber-Frame",
-    },
-    {
-      src: images.kitchenDetail,
-      alt: "Craftsman fitting custom wooden kitchen cabinetry on site",
-      title: "Custom cabinetry, made to fit",
-      tag: "Kitchens",
-    },
-  ];
-
   return (
     <section id="recent-work" className="bg-stone-100 py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -155,23 +128,24 @@ export function RecentWork() {
             A look at what we build
           </h2>
           <p className="mt-4 text-base leading-relaxed text-stone-600 sm:text-lg">
-            Every home is different — these projects show the range of work we
-            handle across our three trades. Ask us for references in your area.
+            Real jobs from around the Peninsula — kitchens, bathrooms and
+            timber-frame work by the Home Build Construction team. Ask us for
+            references in your area.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {items.map((item) => (
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {galleryItems.map((item) => (
             <figure
               key={item.title}
               className="group overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md"
             >
-              <div className="relative aspect-square overflow-hidden bg-stone-100">
+              <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
                 <Image
                   src={item.src}
                   alt={item.alt}
                   fill
-                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
@@ -186,10 +160,6 @@ export function RecentWork() {
             </figure>
           ))}
         </div>
-
-        <p className="mt-8 text-center text-xs text-stone-500">
-          Illustrative demo imagery — ask us for photos of jobs near you.
-        </p>
       </div>
     </section>
   );

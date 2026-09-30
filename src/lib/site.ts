@@ -3,20 +3,21 @@
  * Business details sourced from https://www.homebuildconstruction.co.za/
  */
 
-import heroImage from "@/assets/hero.png";
-import kitchenImage from "@/assets/kitchen.png";
-import bathroomImage from "@/assets/bathroom.png";
-import timberImage from "@/assets/timber.png";
-import kitchenDetailImage from "@/assets/kitchen-detail.png";
-import timberInteriorImage from "@/assets/timber-interior.png";
+import jobA from "@/assets/job_a.webp";
+import jobB from "@/assets/job_b.webp";
+import jobC from "@/assets/job_c.webp";
+import jobD from "@/assets/job_d.webp";
+import jobE from "@/assets/job_e.webp";
+import jobF from "@/assets/job_f.webp";
 
+/** Real project photos supplied by the business. */
 export const images = {
-  hero: heroImage,
-  kitchen: kitchenImage,
-  bathroom: bathroomImage,
-  timber: timberImage,
-  kitchenDetail: kitchenDetailImage,
-  timberInterior: timberInteriorImage,
+  hero: jobB,
+  kitchen: jobE,
+  bathroom: jobA,
+  timber: jobF,
+  livingArea: jobD,
+  deckDoors: jobC,
 };
 
 export const site = {
@@ -80,8 +81,9 @@ export const services: Service[] = [
       "Layout redesign for better flow",
       "Painted, wrapped or solid-timber finishes",
     ],
-    image: kitchenImage,
-    imageAlt: "Newly renovated kitchen with light oak cabinets and granite countertops",
+    image: images.kitchen,
+    imageAlt:
+      "Rustic kitchen with white cabinetry, thick timber countertops and exposed ceiling beams",
     cta: "Get a kitchen quote",
   },
   {
@@ -96,8 +98,9 @@ export const services: Service[] = [
       "Tiling, vanities & fixtures fitted",
       "Wet rooms & walk-in showers",
     ],
-    image: bathroomImage,
-    imageAlt: "Renovated bathroom with freestanding tub and large format tiles",
+    image: images.bathroom,
+    imageAlt:
+      "Renovated bathroom with freestanding tub, blue tile trim and wooden vanity",
     cta: "Get a bathroom quote",
   },
   {
@@ -112,8 +115,9 @@ export const services: Service[] = [
       "Energy-efficient building envelope",
       "Granny flats & garden cottages",
     ],
-    image: timberImage,
-    imageAlt: "Timber frame house under construction with exposed wooden beams",
+    image: images.timber,
+    imageAlt:
+      "Twin A-frame timber-frame houses with glass gables and wooden decks",
     cta: "Discuss a timber-frame build",
   },
 ];
@@ -129,27 +133,39 @@ export const servicesArea = [
 
 export const galleryItems = [
   {
-    src: kitchenImage,
-    alt: "Modern renovated kitchen with oak cabinets",
-    title: "Kitchen refit — Southern Suburbs",
-    tag: "Kitchen",
+    src: images.kitchen,
+    alt: "Rustic kitchen with white cabinetry and thick timber countertops",
+    title: "Rustic kitchen, timber tops",
+    tag: "Kitchens",
   },
   {
-    src: bathroomImage,
-    alt: "Renovated bathroom with freestanding tub",
-    title: "Bathroom rebuild — Muizenberg",
-    tag: "Bathroom",
+    src: images.bathroom,
+    alt: "Renovated bathroom with freestanding tub and wooden vanity",
+    title: "Bathroom refit — tub & vanity",
+    tag: "Bathrooms",
   },
   {
-    src: timberInteriorImage,
-    alt: "Timber frame home interior with exposed beams",
-    title: "Timber-frame home — Peninsula",
+    src: images.timber,
+    alt: "Twin A-frame timber-frame houses with wooden decks",
+    title: "Twin A-frame timber homes",
     tag: "Timber-Frame",
   },
   {
-    src: kitchenDetailImage,
-    alt: "Craftsman installing custom kitchen cabinetry",
-    title: "Custom cabinetry install",
-    tag: "Kitchen",
+    src: images.hero,
+    alt: "Open-plan living area with exposed timber beam ceiling and wood stove",
+    title: "Beam ceiling, open-plan lounge",
+    tag: "Timber-Frame",
+  },
+  {
+    src: images.deckDoors,
+    alt: "Folding glass stack doors opening from living area onto a wooden deck",
+    title: "Stack doors onto the deck",
+    tag: "Timber-Frame",
+  },
+  {
+    src: images.livingArea,
+    alt: "Open-plan dining and living area with geometric pendant lights and timber beams",
+    title: "Open-plan living & dining",
+    tag: "Timber-Frame",
   },
 ];

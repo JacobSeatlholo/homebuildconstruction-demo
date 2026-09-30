@@ -1,4 +1,4 @@
-import { HardHat, Phone, Mail, MapPin, Globe } from "lucide-react";
+import { HardHat, Phone, Mail, MapPin, Globe, ExternalLink } from "lucide-react";
 import { site, waLink, defaultEnquiry } from "@/lib/site";
 import { services } from "@/lib/site";
 import { WhatsAppIcon } from "@/components/site/header";
@@ -107,22 +107,32 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-stone-800 pt-6 text-xs leading-relaxed text-stone-500">
+        <div className="mt-10 flex flex-col gap-3 border-t border-stone-800 pt-6 text-xs leading-relaxed text-stone-500 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {year} {site.legalName}. All rights reserved.
+            <span className="mt-1.5 block">
+              Demo site built for {site.name} — business details from{" "}
+              <a
+                href={site.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 hover:text-stone-300"
+              >
+                homebuildconstruction.co.za
+              </a>
+              .
+            </span>
           </p>
-          <p className="mt-1.5">
-            Demo site built for {site.name} — business details from{" "}
-            <a
-              href={site.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-2 hover:text-stone-300"
-            >
-              homebuildconstruction.co.za
-            </a>
-            . Project imagery is illustrative.
-          </p>
+          <a
+            href="https://app.businesshustle.co.za/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex shrink-0 items-center gap-1.5 rounded-md border border-stone-700 bg-stone-800/60 px-3 py-2 font-medium text-stone-400 transition-colors hover:border-amber-500/50 hover:text-amber-300"
+            aria-label="Website built by BusinessHustle — visit businesshustle.co.za"
+          >
+            Built by BusinessHustle
+            <ExternalLink className="h-3 w-3" aria-hidden="true" />
+          </a>
         </div>
       </div>
     </footer>
