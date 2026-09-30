@@ -1,0 +1,62 @@
+name: Deploy to GitHub Pages
+
+# Builds the site as a static export and publishes it to GitHub Pages.
+# Trigger: every push to main (and manual runs).
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Build static site
+        env:
+          # Static export mode (see next.config.ts)
+          EXPORT_MODE: "1"
+          # Project sites are served from https://<user>.github.io/<repo>/
+          # so all assets must be prefixed with the repo name.
+          # For a user/org site (<user>.github.io repo) this resolves to "/github.io"
+          # — change it to "" in that case.
+          NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
+        run: bun run build:static
+
+      # GitHub Pages needs a .nojekyll file to serve the _next/ folder
+      - name: Disable Jekyll processing
+        run: touch .next-export/.nojekyll
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .next-export
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
