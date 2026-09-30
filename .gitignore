@@ -65,3 +65,5 @@ Caddyfile
 
 # Skills directory
 /skills/
+# internal workspace log
+worklog.md
