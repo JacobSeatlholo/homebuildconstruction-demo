@@ -24,6 +24,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Enables GitHub Pages on the repo & sets source to GitHub Actions
+      # (required on first deploy — Pages is off by default on new repos)
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
 
