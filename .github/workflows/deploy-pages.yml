@@ -28,6 +28,9 @@ jobs:
       # (required on first deploy — Pages is off by default on new repos)
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+          # Create the Pages site if it doesn't exist yet
+          enablement: true
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
