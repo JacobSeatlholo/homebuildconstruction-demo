@@ -99,6 +99,7 @@ The repo ships with a ready-made workflow (`.github/workflows/deploy-pages.yml`)
 | Page sections & order | `src/app/page.tsx` |
 | Colours & fonts | `src/app/globals.css`, Tailwind classes (`stone` / `amber` palette) |
 | Images | Real job photos live in `src/assets/` (bundled & content-hashed automatically). To swap or add: drop the file in, then update the imports/`galleryItems` in `src/lib/site.ts` |
+| Logo & favicon | Logo file is `src/assets/hbc-logo.webp` (used in header, mobile menu & footer via `images.logo` in `src/lib/site.ts`). Favicon/app icons are `src/app/icon.png` & `src/app/apple-icon.png` — regenerate with `python3 scripts/make_icons.py` after replacing the logo |
 | SEO metadata | `src/app/layout.tsx` |
 
 ## Suggested next steps for the real site

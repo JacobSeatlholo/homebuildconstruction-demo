@@ -1,5 +1,6 @@
-import { HardHat, Phone, Mail, MapPin, Globe, ExternalLink } from "lucide-react";
-import { site, waLink, defaultEnquiry } from "@/lib/site";
+import { Phone, Mail, MapPin, Globe, ExternalLink } from "lucide-react";
+import Image from "next/image";
+import { site, waLink, defaultEnquiry, images } from "@/lib/site";
 import { services } from "@/lib/site";
 import { WhatsAppIcon } from "@/components/site/header";
 
@@ -13,9 +14,13 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5">
-              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500 text-stone-950">
-                <HardHat className="h-6 w-6" aria-hidden="true" />
-              </span>
+              <Image
+                src={images.logo}
+                alt="Home Build Construction logo"
+                width={40}
+                height={40}
+                className="h-10 w-10 shrink-0 rounded-lg object-cover ring-1 ring-stone-700/60"
+              />
               <span className="font-heading text-lg font-extrabold text-white">
                 Home Build <span className="text-amber-400">Construction</span>
               </span>

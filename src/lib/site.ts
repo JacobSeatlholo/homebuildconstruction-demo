@@ -9,8 +9,9 @@ import jobC from "@/assets/job_c.webp";
 import jobD from "@/assets/job_d.webp";
 import jobE from "@/assets/job_e.webp";
 import jobF from "@/assets/job_f.webp";
+import hbcLogo from "@/assets/hbc-logo.webp";
 
-/** Real project photos supplied by the business. */
+/** Real project photos and branding supplied by the business. */
 export const images = {
   hero: jobB,
   kitchen: jobE,
@@ -18,6 +19,7 @@ export const images = {
   timber: jobF,
   livingArea: jobD,
   deckDoors: jobC,
+  logo: hbcLogo,
 };
 
 export const site = {

@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Menu, HardHat, Phone } from "lucide-react";
+import { Menu, Phone } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -11,7 +12,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { site, waLink, defaultEnquiry } from "@/lib/site";
+import { site, waLink, defaultEnquiry, images } from "@/lib/site";
 
 const navLinks = [
   { href: "#services", label: "Services" },
@@ -42,9 +43,14 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
         {/* Brand */}
         <Link href="#top" className="flex min-w-0 items-center gap-2.5">
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-amber-500 text-stone-950">
-            <HardHat className="h-6 w-6" aria-hidden="true" />
-          </span>
+          <Image
+            src={images.logo}
+            alt="Home Build Construction logo"
+            width={40}
+            height={40}
+            priority
+            className="h-10 w-10 shrink-0 rounded-lg object-cover ring-1 ring-stone-900/10"
+          />
           <span className="flex min-w-0 flex-col leading-tight">
             <span className="truncate font-heading text-base font-extrabold tracking-tight text-stone-900 sm:text-lg">
               Home Build <span className="text-amber-600">Construction</span>
@@ -129,9 +135,13 @@ export function Header() {
             <SheetContent side="right" className="w-[280px] bg-stone-50">
               <SheetHeader className="border-b border-stone-200 pb-4 text-left">
                 <SheetTitle className="flex items-center gap-2 font-heading text-lg font-extrabold text-stone-900">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-amber-500 text-stone-950">
-                    <HardHat className="h-5 w-5" aria-hidden="true" />
-                  </span>
+                  <Image
+                    src={images.logo}
+                    alt="Home Build Construction logo"
+                    width={36}
+                    height={36}
+                    className="h-9 w-9 shrink-0 rounded-lg object-cover ring-1 ring-stone-900/10"
+                  />
                   Home Build Construction
                 </SheetTitle>
               </SheetHeader>
