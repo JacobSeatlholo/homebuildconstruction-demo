@@ -24,13 +24,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Enables GitHub Pages on the repo & sets source to GitHub Actions
-      # (required on first deploy — Pages is off by default on new repos)
+      # Tries to enable Pages with the "GitHub Actions" source.
+      # Some accounts require the one-time UI toggle (Settings → Pages →
+      # Source: GitHub Actions) before the API will provision the site —
+      # so this step is non-fatal; deploy-pages reports clearly if the
+      # site still isn't provisioned.
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
-          # Create the Pages site if it doesn't exist yet
           enablement: true
+        continue-on-error: true
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
